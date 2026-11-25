@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: groundwater-prediction
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python server.py"
+    plan: free
+    # Free plans have no permanent disk: stored data is lost on restart/redeploy.
+    # For permanent storage add a Disk (paid plan) and set env DATA_DIR to its mount path.
